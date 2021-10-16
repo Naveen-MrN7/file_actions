@@ -20,10 +20,10 @@ class File:
         print()
         try:
             with open(self.path,'r') as f:
-                x=f.readline()
-                print(x)
+                x=f.readlines()
+                print(*x)
         except (FileNotFoundError):
-            print("There is no file exist named"+self.path.split('/')[-1])
+            print("There is no file exist named - "+self.path.split('/')[-1])
 
     def delete(self):
         try:
@@ -31,7 +31,7 @@ class File:
             os.remove(self.path)
             print("Your file is Deleted succesfully")
         except(FileNotFoundError):
-            print("There is no file exist named" + self.path.split('/')[-1])
+            print("There is no file exist named - " + self.path.split('/')[-1])
 
     def append(self):
         try:
